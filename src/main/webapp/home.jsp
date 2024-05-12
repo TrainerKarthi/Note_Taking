@@ -9,6 +9,7 @@
 </head>
 <body>
 
-<h1>Welcome to Home </h1>
+<%@ include file="components/homeNavbar.jsp" %>
+<h1 class="text-center">Welcome to Home </h1>
 </body>
 </html>
