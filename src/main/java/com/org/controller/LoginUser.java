@@ -24,7 +24,7 @@ public class LoginUser extends HttpServlet {
 		User user = dao.loginUser(email, password);
 		HttpSession session = req.getSession();
 		if (user != null) {
-			session.setAttribute("userObj", user);
+			session.setAttribute("userId", user.getId());
 			resp.sendRedirect("home.jsp");
 		} else {
 			session.setAttribute("fail", "Invalid Credentials");

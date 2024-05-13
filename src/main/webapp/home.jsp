@@ -1,3 +1,4 @@
+<%@page import="com.org.dao.UserDao"%>
 <%@page import="com.org.dto.Notes"%>
 <%@page import="java.util.List"%>
 <%@page import="com.org.dto.User"%>
@@ -26,7 +27,9 @@
 	}
 	%>
 	<%
-	User user = (User) session.getAttribute("userObj");
+	int id = (Integer) session.getAttribute("userId");
+	UserDao dao = new UserDao();
+	User user = dao.fetchUserById(id);
 	List<Notes> list = user.getNoteses();
 	System.out.println("Hello");
 	System.out.println(list);
