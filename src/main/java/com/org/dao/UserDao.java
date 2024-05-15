@@ -11,13 +11,13 @@ import javax.persistence.Query;
 import com.org.dto.User;
 
 public class UserDao {
-	
+
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("karthik");
 	EntityManager em = emf.createEntityManager();
 	EntityTransaction et = em.getTransaction();
-	
+
 	public void saveAndUpdateUser(User user) {
-		
+
 		et.begin();
 		em.merge(user);
 		et.commit();
@@ -25,15 +25,28 @@ public class UserDao {
 
 	public User loginUser(String email, String password) {
 		Query query = em.createQuery("SELECT u from User u where u.email=?1 and u.password=?2");
-		
+
 		query.setParameter(1, email);
 		query.setParameter(2, password);
 		List<User> list = query.getResultList();
-		
-		if(list.isEmpty())
+
+		if (list.isEmpty())
 			return null;
-		
+
 		return list.get(0);
+	}
+
+	public User fetchUserById(int id) {
+		return em.find(User.class, id);
+	}
+
+	public List<User> fetchAllUsers() {
+		Query query = em.createQuery("select u from User u");
+
+		List<User> list = query.getResultList();
+
+		return list;
+
 	}
 
 }
