@@ -13,7 +13,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="update.jsp">Profile</a></li>
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="isLogout.jsp">Logout</a></li>
+					aria-current="page" href="logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>

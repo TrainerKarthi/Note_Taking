@@ -50,7 +50,7 @@
 						<h2 class="text-success card-title"><%=n.getTitle()%></h2>
 						<a href="view_notes.jsp?id=<%=n.getId()%>" class="btn btn-sm btn-info">view</a>
 						<a href="view_notes.jsp?id=<%=n.getId()%>" class="btn btn-sm btn-primary">Update</a>
-						<a href="deleteNotes.jsp?id=<%=n.getId()%>" class="btn btn-sm btn-danger">Delete</a>
+						<a href="deleteNotes?id=<%=n.getId()%>" class="btn btn-sm btn-danger">Delete</a>
 						<%-- <h3 class="card-text"><%=n.getDescription()%></h3> --%>
 					</div>
 				</div>
